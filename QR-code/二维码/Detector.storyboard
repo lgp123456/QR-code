@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j3L-ar-aA3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--识别二维码-->
+        <scene sceneID="bQO-TT-u8d">
+            <objects>
+                <viewController id="j3L-ar-aA3" customClass="DetectorViewController" customModule="二维码" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rid-JB-cK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="eq9-OP-NWl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="owk-ND-vnz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_picture" translatesAutoresizingMaskIntoConstraints="NO" id="fWW-7m-qpI">
+                                <rect key="frame" x="67" y="214" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fWW-7m-qpI" secondAttribute="height" multiplier="1:1" id="dCm-he-XgS"/>
+                                    <constraint firstAttribute="width" constant="240" id="mfn-ld-TJ5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示结果....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sao-hL-shW">
+                                <rect key="frame" x="67" y="474" width="82" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PA7-Hx-hFn">
+                                <rect key="frame" x="67" y="164" width="30" height="30"/>
+                                <state key="normal" title="相册"/>
+                                <connections>
+                                    <action selector="pickerImageClick:" destination="j3L-ar-aA3" eventType="touchUpInside" id="ViY-w9-sFx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PA7-Hx-hFn" firstAttribute="leading" secondItem="fWW-7m-qpI" secondAttribute="leading" id="8Dw-bc-cWp"/>
+                            <constraint firstItem="fWW-7m-qpI" firstAttribute="centerX" secondItem="owk-ND-vnz" secondAttribute="centerX" id="PQp-qi-Lbf"/>
+                            <constraint firstItem="sao-hL-shW" firstAttribute="top" secondItem="fWW-7m-qpI" secondAttribute="bottom" constant="20" id="PiH-Md-5Lv"/>
+                            <constraint firstItem="sao-hL-shW" firstAttribute="leading" secondItem="fWW-7m-qpI" secondAttribute="leading" id="Q5d-DZ-lbA"/>
+                            <constraint firstItem="fWW-7m-qpI" firstAttribute="top" secondItem="PA7-Hx-hFn" secondAttribute="bottom" constant="20" id="Zkq-2A-8VL"/>
+                            <constraint firstItem="fWW-7m-qpI" firstAttribute="centerY" secondItem="owk-ND-vnz" secondAttribute="centerY" id="v6h-zR-eO8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="识别二维码" id="lk1-z6-nck"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="fWW-7m-qpI" id="4qf-It-yfd"/>
+                        <outlet property="resultLabel" destination="sao-hL-shW" id="7Jk-VZ-hsh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42t-dn-DQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292.5" y="309.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="empty_picture" width="100" height="100"/>
+    </resources>
+</document>
